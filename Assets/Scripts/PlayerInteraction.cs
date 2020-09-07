@@ -11,6 +11,20 @@ public class PlayerInteraction : MonoBehaviour
         game = FindObjectOfType<Game>();
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.GetComponent<Door>())
+        {
+            Door door = collision.gameObject.GetComponent<Door>();
+
+            if (game.HasKey(door.keyColor))
+            {
+                game.RemoveKey(door.keyColor);
+                door.Unlock();
+            }
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<Key>())
