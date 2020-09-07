@@ -541,7 +541,7 @@ GameObject:
   - component: {fileID: 513572367}
   - component: {fileID: 513572366}
   m_Layer: 5
-  m_Name: Key (3)
+  m_Name: Lives
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1853,7 +1853,7 @@ GameObject:
   - component: {fileID: 658421094}
   - component: {fileID: 658421093}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Red Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2805,7 +2805,7 @@ GameObject:
   - component: {fileID: 1090476406}
   - component: {fileID: 1090476405}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Blue Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3056,6 +3056,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectedKeys: []
   lives: 3
+  keyCountTexts:
+  - {fileID: 1869861900}
+  - {fileID: 658421093}
+  - {fileID: 1090476405}
+  livesText: {fileID: 2116472192}
 --- !u!4 &1460135230
 Transform:
   m_ObjectHideFlags: 0
@@ -3157,7 +3162,7 @@ GameObject:
   - component: {fileID: 1869861901}
   - component: {fileID: 1869861900}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Green Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4353,7 +4358,7 @@ GameObject:
   - component: {fileID: 2116472193}
   - component: {fileID: 2116472192}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Lives Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4724,7 +4729,7 @@ PrefabInstance:
     - target: {fileID: 6164076308981493525, guid: 2f9f336b4a7648445874699631ecc89a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.5
+      value: -11
       objectReference: {fileID: 0}
     - target: {fileID: 6164076308981493525, guid: 2f9f336b4a7648445874699631ecc89a,
         type: 3}
@@ -4775,6 +4780,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6164076310813462957, guid: 2f9f336b4a7648445874699631ecc89a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f9f336b4a7648445874699631ecc89a, type: 3}
