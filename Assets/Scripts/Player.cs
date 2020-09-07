@@ -11,11 +11,14 @@ public class Player : MonoBehaviour
     private bool tryingToClimb;
     private Rigidbody2D body;
     private Game game;
+    private PortalController portalController;
 
-    private void Awake()
+    private void Start()
     {
+        portalController = FindObjectOfType<PortalController>();
         body = GetComponent<Rigidbody2D>();
-        game = FindObjectOfType<Game>();    
+        game = FindObjectOfType<Game>();
+        transform.position = portalController.GetSpawnPosition();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

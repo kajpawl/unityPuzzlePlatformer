@@ -5,9 +5,11 @@ using UnityEngine;
 public class PlayerInteraction : MonoBehaviour
 {
     private Game game;
+    private PortalController portalController;
 
     private void Awake()
     {
+        portalController = FindObjectOfType<PortalController>();
         game = FindObjectOfType<Game>();
     }
 
@@ -22,6 +24,11 @@ public class PlayerInteraction : MonoBehaviour
                 game.RemoveKey(door.keyColor);
                 door.Unlock();
             }
+        }
+
+        if (collision.gameObject.GetComponent<Portal>())
+        {
+            portalController.SetSpawnPortal(collision.gameObject.GetComponent<Portal>());
         }
     }
 
