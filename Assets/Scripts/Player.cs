@@ -28,6 +28,11 @@ public class Player : MonoBehaviour
         {
             Die();
         }
+
+        if (collision.gameObject.GetComponent<Portal>())
+        {
+            portalController.SetSpawnPortal(collision.gameObject.GetComponent<Portal>());
+        }
     }
     private void Update()
     {

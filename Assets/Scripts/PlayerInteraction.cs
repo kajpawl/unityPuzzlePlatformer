@@ -25,11 +25,6 @@ public class PlayerInteraction : MonoBehaviour
                 door.Unlock();
             }
         }
-
-        if (collision.gameObject.GetComponent<Portal>())
-        {
-            portalController.SetSpawnPortal(collision.gameObject.GetComponent<Portal>());
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

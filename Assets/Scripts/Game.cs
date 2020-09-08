@@ -31,7 +31,10 @@ public class Game : MonoBehaviour
         if (lives < 0)
         {
             Debug.Log("Game over");
+            PlayerPrefs.DeleteAll();
+            collectedKeys.Clear();
         }
+        PlayerPrefs.DeleteKey("PortalToSpawnAt");
         UpdateUI();
     }
 
@@ -77,7 +80,7 @@ public class Game : MonoBehaviour
 
     private void Load()
     {
-        lives = PlayerPrefs.GetInt("Lives", 3);
+        lives = PlayerPrefs.GetInt("Lives", 9);
         for (int i = 0; i < PlayerPrefs.GetInt("KeyCount"); i++)
         {
             collectedKeys.Add(PlayerPrefs.GetString("key"+i));
