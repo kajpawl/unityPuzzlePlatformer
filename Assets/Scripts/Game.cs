@@ -8,13 +8,14 @@ public class Game : MonoBehaviour
     [SerializeField]
     private List<string> collectedKeys = new List<string>();
     [SerializeField]
+    private int initialLives = 9;
     private int lives;
     [SerializeField]
     private TMPro.TextMeshProUGUI[] keyCountTexts;
     [SerializeField]
     private TMPro.TextMeshProUGUI livesText;
 
-    [UnityEditor.MenuItem("Dev Tools/Delete Save")]
+    // [UnityEditor.MenuItem("Dev Tools/Delete Save")]
     public static void DeleteSaves()
     {
         PlayerPrefs.DeleteAll();
@@ -33,6 +34,7 @@ public class Game : MonoBehaviour
             Debug.Log("Game over");
             PlayerPrefs.DeleteAll();
             collectedKeys.Clear();
+            lives = initialLives;
         }
         PlayerPrefs.DeleteKey("PortalToSpawnAt");
         UpdateUI();
@@ -80,7 +82,7 @@ public class Game : MonoBehaviour
 
     private void Load()
     {
-        lives = PlayerPrefs.GetInt("Lives", 9);
+        lives = PlayerPrefs.GetInt("Lives", initialLives);
         for (int i = 0; i < PlayerPrefs.GetInt("KeyCount"); i++)
         {
             collectedKeys.Add(PlayerPrefs.GetString("key"+i));

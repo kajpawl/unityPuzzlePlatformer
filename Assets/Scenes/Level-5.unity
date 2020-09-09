@@ -2653,7 +2653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectedKeys: []
-  lives: 3
+  initialLives: 9
   keyCountTexts:
   - {fileID: 1869861900}
   - {fileID: 658421093}
